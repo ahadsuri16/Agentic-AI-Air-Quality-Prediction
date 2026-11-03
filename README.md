@@ -15,10 +15,11 @@
 
 ## 👥 Authors & Affiliations
 
+* **Abdul Ahad Khan Suri** — *Department of Computer Science & IT, The University of Lahore, Lahore, Pakistan*
 * **Muhammad Saad Khalid Khan Suri** — *Department of Computer Science, University of Engineering and Technology (UET), Lahore, Pakistan*
 * **Abqa Javed** — *Department of Computer Science, University of Engineering and Technology (UET), Lahore, Pakistan*
 * **Aatif Hussain** — *Department of Computer Science, University of Engineering and Technology (UET), Lahore, Pakistan*
-* **Abdul Ahad Khan Suri** — *Department of Computer Science, The University of Lahore, Lahore, Pakistan*
+
 
 📄 **Research Paper:** The full LaTeX publication source and figures are accessible in the [`paper/`](./paper) directory.
 
