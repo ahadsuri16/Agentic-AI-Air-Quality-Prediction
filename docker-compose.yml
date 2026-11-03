@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: aqi_backend_api
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    restart: unless-stopped
+    networks:
+      - aqi_network
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dashboard
+    container_name: aqi_dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://backend-api:8000
+    depends_on:
+      - backend-api
+    restart: unless-stopped
+    networks:
+      - aqi_network
+
+  iot-simulator:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.simulator
+    container_name: aqi_iot_simulator
+    environment:
+      - API_URL=http://backend-api:8000
+    depends_on:
+      - backend-api
+    restart: unless-stopped
+    networks:
+      - aqi_network
+
+networks:
+  aqi_network:
+    driver: bridge
